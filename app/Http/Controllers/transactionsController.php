@@ -45,16 +45,16 @@ class transactionsController extends Controller
         ], 200);
     }
 
-    public function getByKasir($id)
+    public function getByCashier($id)
     {
-        $post = DB::table('transaksi')
-            ->select('transaksi.*','user.id as userId','user.nama')
-            ->where('id_user',$id)
-            ->join('user','transaksi.id_user','=','user.id')
+        $post = DB::table('transactions')
+            ->select('transactions.*','user.id as userId','user.name')
+            ->where('user_id',$id)
+            ->join('user','transactions.user_id','=','user.id')
             ->get();
         return response()->json([
             'success' => true,
-            'message' => 'Data Transaksi',
+            'message' => 'Transactions data list',
             'data'    => $post,
             'count'   => count($post)
         ], 200);

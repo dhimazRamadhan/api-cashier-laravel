@@ -67,8 +67,8 @@ class Kernel extends HttpKernel
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        'api.kasir' => \App\Http\Middleware\KasirAuth::class,
-        'api.manajer' => \App\Http\Middleware\ManagerAuth::class,
+        'api.cashier' => \App\Http\Middleware\CashierAuth::class,
+        'api.manager' => \App\Http\Middleware\ManagerAuth::class,
         'api.admin' => \App\Http\Middleware\AdminAuth::class,
     ];
 }
